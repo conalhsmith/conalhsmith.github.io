@@ -23,7 +23,7 @@
       align-items: center;
       flex-direction: column;
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: 'Georgia', serif; /* Changed font to Georgia */
       text-align: center;
     }
 
@@ -31,16 +31,19 @@
     h1 {
       font-size: 4rem;
       margin-bottom: 20px;
+      font-weight: bold; /* Make text bold */
     }
 
     /* Smaller text for description */
     p {
       font-size: 1.5rem;
+      font-weight: bold; /* Make text bold */
     }
 
     /* Typing effect for the switching text */
     .typewriter {
       display: inline-block;
+      color: red; /* Make typing text red */
     }
 
     .typewriter::after {
@@ -53,11 +56,23 @@
         opacity: 0;
       }
     }
+
+    /* Smaller non-bold text below */
+    .subtext {
+      font-size: 1rem;
+      font-weight: normal; /* Not bold */
+      margin-top: 20px;
+      max-width: 600px;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
-  <h1>Hi, My name is Conal Smith.</h1>
-  <p>I am a: <span class="typewriter" id="typewriter"></span></p>
+  <h1>Hi, My name is Conal Smith</h1>
+  <p>I am a <span class="typewriter" id="typewriter"></span></p>
+  <div class="subtext">
+    I am a robotics systems engineer passionate about bringing autonomous and biomimetic robots to life.
+  </div>
 
   <script>
     // Array of roles to display
