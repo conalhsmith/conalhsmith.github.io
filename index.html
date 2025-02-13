@@ -93,16 +93,17 @@
 
     /* Experience section */
     .experience-section {
-      background-color: black; /* Changed to black */
+      background-color: white; /* Changed back to white */
       padding: 80px 20px;
       text-align: center;
     }
 
     .experience-section h2 {
-      font-size: 2.5rem;
+      font-size: 3.5rem; /* Increased font size */
       font-weight: 700;
-      color: white; /* Changed to white for contrast */
+      color: black;
       margin-bottom: 40px;
+      font-family: 'Poppins', sans-serif; /* Matched font to the hero section */
     }
 
     /* Image row styling */
@@ -117,7 +118,13 @@
       width: 30%; /* Enlarged to take up most of the row */
       height: auto;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Adjusted shadow for black background */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Added stronger shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    }
+
+    .image-row img:hover {
+      transform: scale(1.05); /* Slightly enlarge on hover */
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
     }
   </style>
 </head>
