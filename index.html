@@ -12,6 +12,37 @@
       box-sizing: border-box;
     }
 
+    /* Header styling */
+    header {
+      background-color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .header-left, .header-right {
+      display: flex;
+      gap: 20px;
+    }
+
+    .header-left a, .header-right a {
+      text-decoration: none;
+      color: black;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .header-left a:hover, .header-right a:hover {
+      color: #007BFF;
+    }
+
     /* Full-page background image */
     body {
       background-image: url('background.jpg'); /* Replace with your image */
@@ -23,27 +54,28 @@
       align-items: center;
       flex-direction: column;
       color: white;
-      font-family: 'Georgia', serif; /* Changed font to Georgia */
+      font-family: 'Arial', sans-serif; /* Changed font to Arial */
       text-align: center;
+      padding-top: 60px; /* To account for the fixed header */
     }
 
     /* Large text for name */
     h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      font-weight: bold; /* Make text bold */
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      font-weight: bold;
     }
 
     /* Smaller text for description */
     p {
-      font-size: 1.5rem;
-      font-weight: bold; /* Make text bold */
+      font-size: 1.2rem;
+      font-weight: bold;
     }
 
     /* Typing effect for the switching text */
     .typewriter {
       display: inline-block;
-      color: red; /* Make typing text red */
+      color: red;
     }
 
     .typewriter::after {
@@ -59,15 +91,30 @@
 
     /* Smaller non-bold text below */
     .subtext {
-      font-size: 1rem;
-      font-weight: normal; /* Not bold */
-      margin-top: 20px;
+      font-size: 0.9rem;
+      font-weight: normal;
+      margin-top: 10px;
       max-width: 600px;
       line-height: 1.5;
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="header-left">
+      <a href="https://drive.google.com/file/d/1ju6bedwwfPkT99p7R48sqO0ELahVZaSO/view?usp=sharing" target="_blank">Resume</a>
+      <a href="https://drive.google.com/file/d/1tMQr8glKQ-C3ojaV1GzCGWmJbmKNPbDr/view?usp=sharing" target="_blank">Transcript</a>
+    </div>
+    <div class="header-right">
+      <a href="#">Home</a>
+      <a href="#">Experience</a>
+      <a href="#">Skills</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+  </header>
+
   <h1>Hi, My name is Conal Smith</h1>
   <p>I am a <span class="typewriter" id="typewriter"></span></p>
   <div class="subtext">
