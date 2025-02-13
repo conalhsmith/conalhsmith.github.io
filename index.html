@@ -17,7 +17,7 @@
     /* Header styling */
     header {
       background-color: white;
-      padding: 15px 30px; /* Increased padding for larger header */
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -31,15 +31,15 @@
 
     .header-left, .header-right {
       display: flex;
-      gap: 25px; /* Increased gap between links */
+      gap: 25px;
     }
 
     .header-left a, .header-right a {
       text-decoration: none;
       color: black;
-      font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
-      font-size: 1.1rem; /* Increased font size */
-      font-weight: 500; /* Medium weight for better readability */
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
     }
 
     .header-left a:hover, .header-right a:hover {
@@ -47,7 +47,7 @@
     }
 
     /* Full-page background image */
-    body {
+    .hero-section {
       background-image: url('background.jpg'); /* Replace with your image */
       background-size: cover;
       background-position: center;
@@ -57,22 +57,21 @@
       align-items: center;
       flex-direction: column;
       color: white;
-      font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
+      font-family: 'Poppins', sans-serif;
       text-align: center;
-      padding-top: 80px; /* Increased padding to account for larger header */
     }
 
     /* Large text for name */
     h1 {
-      font-size: 4.5rem; /* Increased font size */
+      font-size: 4.5rem;
       margin-bottom: 15px;
-      font-weight: 700; /* Bold weight */
+      font-weight: 700;
     }
 
     /* Smaller text for description */
     p {
-      font-size: 1.5rem; /* Increased font size */
-      font-weight: 600; /* Semi-bold weight */
+      font-size: 1.5rem;
+      font-weight: 600;
     }
 
     /* Typing effect for the switching text */
@@ -92,13 +91,18 @@
       }
     }
 
-    /* Smaller non-bold text below */
-    .subtext {
-      font-size: 1.1rem; /* Increased font size */
-      font-weight: 400; /* Normal weight */
-      margin-top: 15px;
-      max-width: 600px;
-      line-height: 1.6;
+    /* Experience section */
+    .experience-section {
+      background-color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .experience-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: black;
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -110,7 +114,7 @@
     </div>
     <div class="header-right">
       <a href="#">Home</a>
-      <a href="#">Experience</a>
+      <a href="#experience">Experience</a> <!-- Link to Experience section -->
       <a href="#">Skills</a>
       <a href="#">About</a>
       <a href="#">Projects</a>
@@ -118,11 +122,17 @@
     </div>
   </header>
 
-  <h1>Hi, My name is Conal Smith</h1>
-  <p>I am a <span class="typewriter" id="typewriter"></span></p>
-  <div class="subtext">
-    I am a robotics systems engineer passionate about bringing autonomous and biomimetic robots to life.
-  </div>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>Hi, My name is Conal Smith</h1>
+    <p>I am a <span class="typewriter" id="typewriter"></span></p>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience-section">
+    <h2>Experience</h2>
+    <!-- Add your experience content here -->
+  </section>
 
   <script>
     // Array of roles to display
