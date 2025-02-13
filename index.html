@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conal Smith - Portfolio</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full-page background image */
+    body {
+      background-image: url('background.jpg'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    /* Large text for name */
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    /* Smaller text for description */
+    p {
+      font-size: 1.5rem;
+    }
+
+    /* Typing effect for the switching text */
+    .typewriter {
+      display: inline-block;
+    }
+
+    .typewriter::after {
+      content: '|';
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hi, My name is Conal Smith.</h1>
+  <p>I am a: <span class="typewriter" id="typewriter"></span></p>
+
+  <script>
+    // Array of roles to display
+    const roles = ["Mechatronics Engineer", "Embedded Developer", "Sports Enthusiast"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    const typewriterElement = document.getElementById('typewriter');
+
+    function type() {
+      if (charIndex < roles[roleIndex].length) {
+        typewriterElement.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100); // Typing speed (100ms per character)
+      } else {
+        setTimeout(erase, 2000); // Wait 2 seconds before erasing
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typewriterElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50); // Erasing speed (50ms per character)
+      } else {
+        roleIndex = (roleIndex + 1) % roles.length; // Move to the next role
+        setTimeout(type, 500); // Wait 0.5 seconds before typing the next role
+      }
+    }
+
+    // Start the typing effect
+    type();
+  </script>
+</body>
+</html>
