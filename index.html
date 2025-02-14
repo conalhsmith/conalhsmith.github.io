@@ -17,7 +17,7 @@
     /* Header styling */
     header {
       background-color: white;
-      padding: 15px 30px;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -31,14 +31,14 @@
 
     .header-left, .header-right {
       display: flex;
-      gap: 25px;
+      gap: 15px;
     }
 
     .header-left a, .header-right a {
       text-decoration: none;
       color: black;
       font-family: 'Poppins', sans-serif;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       font-weight: 500;
     }
 
@@ -59,18 +59,19 @@
       color: white;
       font-family: 'Poppins', sans-serif;
       text-align: center;
+      padding: 0 20px;
     }
 
     /* Large text for name */
     h1 {
-      font-size: 4.5rem;
+      font-size: 3rem; /* Adjusted for mobile */
       margin-bottom: 15px;
       font-weight: 700;
     }
 
     /* Smaller text for description */
     p {
-      font-size: 1.5rem;
+      font-size: 1.2rem; /* Adjusted for mobile */
       font-weight: 600;
     }
 
@@ -94,15 +95,15 @@
     /* Education & Experience section */
     .experience-section {
       background-color: white;
-      padding: 80px 20px;
+      padding: 60px 20px; /* Adjusted padding for mobile */
       text-align: center;
     }
 
     .experience-section h2 {
-      font-size: 3.5rem;
+      font-size: 2.5rem; /* Adjusted for mobile */
       font-weight: 700;
       color: black;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       font-family: 'Poppins', sans-serif;
     }
 
@@ -116,7 +117,8 @@
 
     .image-container {
       position: relative;
-      width: 30%;
+      width: 100%; /* Full width on mobile */
+      max-width: 300px; /* Limit width on larger screens */
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -148,6 +150,8 @@
       align-items: center;
       opacity: 0;
       transition: opacity 0.3s ease;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     .image-container:hover .image-overlay {
@@ -158,18 +162,19 @@
       font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
     }
 
     .image-overlay p {
-      font-size: 1rem;
+      font-size: 0.9rem; /* Adjusted for mobile */
       font-weight: 400;
       text-align: center;
       margin-bottom: 15px;
-      padding: 0 20px;
+      font-family: 'Poppins', sans-serif;
     }
 
     .image-overlay .explore-button {
-      font-size: 1rem;
+      font-size: 0.9rem; /* Adjusted for mobile */
       font-weight: 500;
       color: white;
       background-color: #007BFF;
@@ -177,10 +182,51 @@
       border-radius: 5px;
       text-decoration: none;
       transition: background-color 0.3s ease;
+      font-family: 'Poppins', sans-serif;
     }
 
     .image-overlay .explore-button:hover {
       background-color: #0056b3;
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem; /* Smaller font size for mobile */
+      }
+
+      p {
+        font-size: 1rem; /* Smaller font size for mobile */
+      }
+
+      .experience-section h2 {
+        font-size: 2rem; /* Smaller font size for mobile */
+      }
+
+      .header-left, .header-right {
+        gap: 10px; /* Smaller gap for mobile */
+      }
+
+      .header-left a, .header-right a {
+        font-size: 0.8rem; /* Smaller font size for mobile */
+      }
+
+      .image-container {
+        width: 100%; /* Full width on mobile */
+        max-width: 100%; /* No max-width on mobile */
+      }
+
+      .image-overlay h3 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+      }
+
+      .image-overlay p {
+        font-size: 0.8rem; /* Smaller font size for mobile */
+      }
+
+      .image-overlay .explore-button {
+        font-size: 0.8rem; /* Smaller font size for mobile */
+      }
     }
   </style>
 </head>
@@ -192,7 +238,7 @@
     </div>
     <div class="header-right">
       <a href="#">Home</a>
-      <a href="#experience">Education & Experience</a> <!-- Updated text -->
+      <a href="#experience">Education & Experience</a>
       <a href="#">Skills</a>
       <a href="#">About</a>
       <a href="#">Projects</a>
@@ -208,14 +254,14 @@
 
   <!-- Education & Experience Section -->
   <section id="experience" class="experience-section">
-    <h2>Education & Experience</h2> <!-- Updated text -->
+    <h2>Education & Experience</h2>
     <div class="image-row">
       <div class="image-container">
         <img src="Trimble.jpg" alt="Trimble">
         <div class="image-overlay">
           <h3>Trimble</h3>
           <p>I worked on the body firmware controls team, and developed lighting applications for Tesla vehicles.</p>
-          <div class="explore-button">Explore</div> <!-- Explore button as text -->
+          <div class="explore-button">Explore</div>
         </div>
       </div>
       <div class="image-container">
@@ -223,7 +269,7 @@
         <div class="image-overlay">
           <h3>GBV</h3>
           <p>Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects.</p>
-          <div class="explore-button">Explore</div> <!-- Explore button as text -->
+          <div class="explore-button">Explore</div>
         </div>
       </div>
       <div class="image-container">
@@ -231,7 +277,7 @@
         <div class="image-overlay">
           <h3>University of Canterbury</h3>
           <p>Studied Mechatronics Engineering and worked on robotics research projects.</p>
-          <div class="explore-button">Explore</div> <!-- Explore button as text -->
+          <div class="explore-button">Explore</div>
         </div>
       </div>
     </div>
