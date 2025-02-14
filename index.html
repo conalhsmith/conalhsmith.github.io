@@ -117,8 +117,8 @@
 
     .image-container {
       position: relative;
-      width: 100%; /* Full width on mobile */
-      max-width: 300px; /* Limit width on larger screens */
+      width: 30%; /* Default width for desktop */
+      max-width: 400px; /* Larger images on desktop */
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -211,6 +211,10 @@
         font-size: 0.8rem; /* Smaller font size for mobile */
       }
 
+      .header-right {
+        display: none; /* Hide header-right on mobile */
+      }
+
       .image-container {
         width: 100%; /* Full width on mobile */
         max-width: 100%; /* No max-width on mobile */
@@ -234,7 +238,7 @@
   <header>
     <div class="header-left">
       <a href="https://drive.google.com/file/d/1ju6bedwwfPkT99p7R48sqO0ELahVZaSO/view?usp=sharing" target="_blank">Resume</a>
-      <a href="https://drive.google.com/file/d/1tMQr8glKQ-C3ojaV1GzCGWmJbmKNPbDr/view?usp=sharing" target="_blank">Transcript</a>
+      <a href="https://drive.google.com/file/d/1WLN15jz4IAHCEH5X06Yd2N9VIQdUcPgr/view?usp=sharing" target="_blank">Transcript</a>
     </div>
     <div class="header-right">
       <a href="#">Home</a>
