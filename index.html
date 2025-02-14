@@ -118,7 +118,7 @@
     .image-container {
       position: relative;
       width: 30%; /* Default width for desktop */
-      max-width: 400px; /* Larger images on desktop */
+      max-width: 500px; /* Larger images on desktop */
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -154,8 +154,8 @@
       box-sizing: border-box;
     }
 
-    .image-container:hover .image-overlay {
-      opacity: 1;
+    .image-container.active .image-overlay {
+      opacity: 1; /* Show overlay when active */
     }
 
     .image-overlay h3 {
@@ -238,7 +238,7 @@
   <header>
     <div class="header-left">
       <a href="https://drive.google.com/file/d/1ju6bedwwfPkT99p7R48sqO0ELahVZaSO/view?usp=sharing" target="_blank">Resume</a>
-      <a href="https://drive.google.com/file/d/1WLN15jz4IAHCEH5X06Yd2N9VIQdUcPgr/view?usp=sharing" target="_blank">Transcript</a>
+      <a href="https://drive.google.com/file/d/1tMQr8glKQ-C3ojaV1GzCGWmJbmKNPbDr/view?usp=sharing" target="_blank">Transcript</a>
     </div>
     <div class="header-right">
       <a href="#">Home</a>
@@ -317,6 +317,21 @@
 
     // Start the typing effect
     type();
+
+    // Toggle overlay on mobile tap
+    const imageContainers = document.querySelectorAll('.image-container');
+    imageContainers.forEach(container => {
+      container.addEventListener('click', () => {
+        // Close any open overlays
+        imageContainers.forEach(otherContainer => {
+          if (otherContainer !== container) {
+            otherContainer.classList.remove('active');
+          }
+        });
+        // Toggle the clicked container
+        container.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
