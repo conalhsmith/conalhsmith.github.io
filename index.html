@@ -1,83 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conal Smith - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conal Smith - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <a href="https://drive.google.com/file/d/1ju6bedwwfPkT99p7R48sqO0ELahVZaSO/view?usp=sharing" target="_blank">Resume</a>
-      <a href="https://drive.google.com/file/d/1tMQr8glKQ-C3ojaV1GzCGWmJbmKNPbDr/view?usp=sharing" target="_blank">Transcript</a>
-    </div>
-    <div class="header-right">
-      <a href="#">Home</a>
-      <a href="#experience">Education & Experience</a>
-      <a href="#">Skills</a>
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </div>
-  </header>
-
-  <section class="hero-section">
-    <h1>Hi, My name is Conal Smith</h1>
-    <p>I am a <span class="typewriter" id="typewriter"></span></p>
-  </section>
-
-  <section id="experience" class="experience-section">
-    <h2>Education & Experience</h2>
-    <div class="image-row">
-      <div class="image-container">
-        <img src="images/Trimble.jpg" alt="Trimble">
-        <div class="image-overlay">
-          <h3>Trimble</h3>
-          <p>Body firmware controls and lighting applications for Tesla vehicles</p>
-          <div class="explore-button" data-modal="trimble-modal">Explore</div>
+    <header>
+        <div class="header-left">
+            <a href="https://drive.google.com/your-resume-link" target="_blank">Resume</a>
+            <a href="https://drive.google.com/your-transcript-link" target="_blank">Transcript</a>
         </div>
-      </div>
-      <div class="image-container">
-        <img src="images/GBV.jpg" alt="GBV">
-        <div class="image-overlay">
-          <h3>GBV</h3>
-          <p>Embedded systems for autonomous robots</p>
-          <div class="explore-button" data-modal="gbv-modal">Explore</div>
+        <div class="header-right">
+            <a href="#">Home</a>
+            <a href="#experience">Experience</a>
+            <a href="#">Skills</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
         </div>
-      </div>
-      <div class="image-container">
-        <img src="images/UC.jpg" alt="UC">
-        <div class="image-overlay">
-          <h3>University of Canterbury</h3>
-          <p>Mechatronics Engineering and robotics research</p>
-          <div class="explore-button" data-modal="uc-modal">Explore</div>
+    </header>
+
+    <section class="hero-section">
+        <h1>Hi, My name is Conal Smith</h1>
+        <p class="hero-subtitle">I am a <span class="typewriter" id="typewriter"></span></p>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <h2>Education & Experience</h2>
+        <div class="image-grid">
+            <div class="image-container">
+                <img src="images/trimble.jpg" alt="Trimble">
+                <div class="image-overlay">
+                    <h3>Trimble</h3>
+                    <p>Body firmware controls and lighting applications</p>
+                    <button class="explore-btn" data-modal="modal1">Explore</button>
+                </div>
+            </div>
+            <!-- Repeat for other images -->
         </div>
-      </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h3>Teaching Assistant - University of Waterloo</h3>
+                <p class="date">09/2020 - 12/2020</p>
+            </div>
+            <div class="modal-body">
+                <img src="images/trimble.jpg" alt="Experience Image">
+                <div class="modal-text">
+                    <p>Designed assessment materials and implemented automated grading systems for 300+ students using C++ and Python. Conducted lab sessions focusing on core programming concepts resulting in significant grade improvements.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Modals -->
-  <div id="trimble-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-header">
-        <h3>Teaching Assistant - University of Waterloo</h3>
-        <p>09/2020 - 12/2020</p>
-      </div>
-      <div class="modal-body">
-        <img src="images/Trimble.jpg" alt="Trimble Experience">
-        <div class="modal-text">
-          <p>Designed questions on quizzes, midterm, and final and created automated testing using C++ and Python to grade 300+ submissions per assessment. Provided instantaneous feedback using Python expect library and regular expressions following SOLID design principles.</p>
-          <p>Led lab sessions for 300+ students, teaching core C++ concepts including dynamic memory allocation, OOP, pointers, and linked lists. Resulted in significant grade improvements across the cohort.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Add similar modals for GBV and UC -->
-
-  <script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
