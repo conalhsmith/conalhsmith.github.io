@@ -286,41 +286,30 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 20px;
       justify-content: center;
       padding: 0 20px;
     }
 
     .skill-item {
-      background-color: #f4f4f4;
-      padding: 20px;
-      border-radius: 10px;
       text-align: center;
       font-family: 'Poppins', sans-serif;
       font-size: 1rem;
       font-weight: 500;
       color: #333;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .skill-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      width: 100px; /* Fixed size for images */
+      height: 100px; /* Fixed size for images */
+      margin-bottom: 10px;
     }
 
     .skill-item p {
       font-size: 0.9rem;
       font-weight: 400;
       color: #666;
-    }
-
-    .skill-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     /* Media Queries for Mobile */
@@ -375,7 +364,7 @@
       }
 
       .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       }
 
       .skill-item {
@@ -460,10 +449,6 @@
       <div class="skill-item">
         <img src="CAD.jpg" alt="CAD">
         <p>Solidworks, AutoCAD, Blender</p>
-      </div>
-      <div class="skill-item">
-        <img src="ROS.jpg" alt="ROS">
-        <p>ROS, ROS2, Gazebo, and Isaac Sim</p>
       </div>
     </div>
   </section>
