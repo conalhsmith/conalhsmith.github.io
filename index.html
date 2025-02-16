@@ -46,6 +46,52 @@
       color: #007BFF;
     }
 
+    /* Mobile dropdown menu */
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    @media (max-width: 768px) {
+      .header-right {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .dropdown-menu.active {
+        display: block;
+      }
+    }
+
     /* Full-page background image */
     .hero-section {
       background-image: url('background.jpg'); /* Replace with your image */
@@ -71,7 +117,7 @@
 
     /* Smaller text for description */
     p {
-      font-size: 1.2rem; /* Adjusted for mobile */
+      font-size: 1.5rem; /* Increased size for "I am a..." text */
       font-weight: 600;
     }
 
@@ -79,6 +125,7 @@
     .typewriter {
       display: inline-block;
       color: red;
+      font-size: 1.5rem; /* Increased size for typing text */
     }
 
     .typewriter::after {
@@ -498,7 +545,7 @@
       }
 
       p {
-        font-size: 1rem; /* Smaller font size for mobile */
+        font-size: 1.2rem; /* Adjusted for mobile */
       }
 
       .experience-section h2 {
@@ -596,6 +643,15 @@
       <a href="https://drive.google.com/file/d/1tMQr8glKQ-C3ojaV1GzCGWmJbmKNPbDr/view?usp=sharing" target="_blank">Transcript</a>
     </div>
     <div class="header-right">
+      <a href="#">Home</a>
+      <a href="#experience">Education & Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="menu-icon" onclick="toggleDropdown()">&#9776;</div>
+    <div class="dropdown-menu" id="dropdownMenu">
       <a href="#">Home</a>
       <a href="#experience">Education & Experience</a>
       <a href="#skills">Skills</a>
@@ -970,6 +1026,12 @@
         modals.forEach(modal => modal.style.display = 'none');
       }
     });
+
+    // Dropdown menu functionality
+    function toggleDropdown() {
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      dropdownMenu.classList.toggle('active');
+    }
   </script>
 </body>
 </html>
