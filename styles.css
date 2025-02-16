@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+  background-color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-left, .header-right {
+  display: flex;
+  gap: 20px;
+}
+
+.header-left a, .header-right a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.header-left a:hover, .header-right a:hover {
+  color: #007BFF;
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding-top: 60px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.typewriter {
+  color: red;
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 80px 30px;
+  background-color: white;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.explore-button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.modal-body {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.modal-body img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 250px;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .modal-body img {
+    width: 100%;
+  }
+}

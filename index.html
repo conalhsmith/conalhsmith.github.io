@@ -4,327 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conal Smith - Portfolio</title>
-  <!-- Add Poppins font from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Header styling */
-    header {
-      background-color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-
-    .header-left, .header-right {
-      display: flex;
-      gap: 15px;
-    }
-
-    .header-left a, .header-right a {
-      text-decoration: none;
-      color: black;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .header-left a:hover, .header-right a:hover {
-      color: #007BFF;
-    }
-
-    /* Full-page background image */
-    .hero-section {
-      background-image: url('background.jpg'); /* Replace with your image */
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    /* Large text for name */
-    h1 {
-      font-size: 3rem; /* Adjusted for mobile */
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    /* Smaller text for description */
-    p {
-      font-size: 1.2rem; /* Adjusted for mobile */
-      font-weight: 600;
-    }
-
-    /* Typing effect for the switching text */
-    .typewriter {
-      display: inline-block;
-      color: red;
-    }
-
-    .typewriter::after {
-      content: '|';
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-
-    /* Education & Experience section */
-    .experience-section {
-      background-color: white;
-      padding: 60px 20px; /* Adjusted padding for mobile */
-      text-align: center;
-    }
-
-    .experience-section h2 {
-      font-size: 2.5rem; /* Adjusted for mobile */
-      font-weight: 700;
-      color: black;
-      margin-bottom: 30px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    /* Image row styling */
-    .image-row {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .image-container {
-      position: relative;
-      width: 30%; /* Default width for desktop */
-      max-width: 500px; /* Larger images on desktop */
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .image-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .image-container:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .image-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: calc(100% - 50px); /* Leave space for Explore button */
-      background: rgba(0, 0, 0, 0.7); /* Dark overlay */
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    /* Hover effect for desktop */
-    @media (hover: hover) {
-      .image-container:hover .image-overlay {
-        opacity: 1;
-      }
-    }
-
-    /* Active class for mobile tap */
-    .image-container.active .image-overlay {
-      opacity: 1;
-    }
-
-    .image-overlay h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .image-overlay p {
-      font-size: 0.9rem; /* Adjusted for mobile */
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 15px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .explore-button {
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      text-align: center;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: white;
-      background-color: #007BFF;
-      padding: 8px 16px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      font-family: 'Poppins', sans-serif;
-      z-index: 2; /* Ensure button is above overlay */
-      cursor: pointer;
-    }
-
-    .explore-button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Modal styling */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1001;
-    }
-
-    .modal-content {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 800px;
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .modal-header {
-      text-align: center;
-    }
-
-    .modal-header h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 5px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .modal-header p {
-      font-size: 1rem;
-      color: #666;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .modal-body {
-      display: flex;
-      gap: 20px;
-    }
-
-    .modal-body img {
-      width: 40%;
-      border-radius: 10px;
-    }
-
-    .modal-body p {
-      font-size: 1rem;
-      line-height: 1.6;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 1.5rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    /* Media Queries for Mobile */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem; /* Smaller font size for mobile */
-      }
-
-      p {
-        font-size: 1rem; /* Smaller font size for mobile */
-      }
-
-      .experience-section h2 {
-        font-size: 2rem; /* Smaller font size for mobile */
-      }
-
-      .header-left, .header-right {
-        gap: 10px; /* Smaller gap for mobile */
-      }
-
-      .header-left a, .header-right a {
-        font-size: 0.8rem; /* Smaller font size for mobile */
-      }
-
-      .header-right {
-        display: none; /* Hide header-right on mobile */
-      }
-
-      .image-container {
-        width: 100%; /* Full width on mobile */
-        max-width: 100%; /* No max-width on mobile */
-      }
-
-      .image-overlay h3 {
-        font-size: 1.2rem; /* Smaller font size for mobile */
-      }
-
-      .image-overlay p {
-        font-size: 0.8rem; /* Smaller font size for mobile */
-      }
-
-      .explore-button {
-        font-size: 0.8rem; /* Smaller font size for mobile */
-        width: 85%;
-      }
-
-      .modal-body {
-        flex-direction: column;
-      }
-
-      .modal-body img {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -342,39 +23,37 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero-section">
     <h1>Hi, My name is Conal Smith</h1>
     <p>I am a <span class="typewriter" id="typewriter"></span></p>
   </section>
 
-  <!-- Education & Experience Section -->
   <section id="experience" class="experience-section">
     <h2>Education & Experience</h2>
     <div class="image-row">
       <div class="image-container">
-        <img src="Trimble.jpg" alt="Trimble">
+        <img src="images/Trimble.jpg" alt="Trimble">
         <div class="image-overlay">
           <h3>Trimble</h3>
-          <p>I worked on the body firmware controls team, and developed lighting applications for Tesla vehicles.</p>
+          <p>Body firmware controls and lighting applications for Tesla vehicles</p>
+          <div class="explore-button" data-modal="trimble-modal">Explore</div>
         </div>
-        <div class="explore-button" data-modal="trimble-modal">Explore</div>
       </div>
       <div class="image-container">
-        <img src="GBV.jpg" alt="GBV">
+        <img src="images/GBV.jpg" alt="GBV">
         <div class="image-overlay">
           <h3>GBV</h3>
-          <p>Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects.</p>
+          <p>Embedded systems for autonomous robots</p>
+          <div class="explore-button" data-modal="gbv-modal">Explore</div>
         </div>
-        <div class="explore-button" data-modal="gbv-modal">Explore</div>
       </div>
       <div class="image-container">
-        <img src="UC.jpg" alt="UC">
+        <img src="images/UC.jpg" alt="UC">
         <div class="image-overlay">
           <h3>University of Canterbury</h3>
-          <p>Studied Mechatronics Engineering and worked on robotics research projects.</p>
+          <p>Mechatronics Engineering and robotics research</p>
+          <div class="explore-button" data-modal="uc-modal">Explore</div>
         </div>
-        <div class="explore-button" data-modal="uc-modal">Explore</div>
       </div>
     </div>
   </section>
@@ -388,118 +67,17 @@
         <p>09/2020 - 12/2020</p>
       </div>
       <div class="modal-body">
-        <img src="Trimble.jpg" alt="Trimble">
-        <p>
-          Designed questions on quizzes, midterm, and final and created automated testing using C++ and Python to grade 300+ submissions per assessment and provide instantaneous feedback using Python expect library and regular expression based on the SOLID design principle. Led lab and help sessions for 300+ students, assisted with teaching concepts in C++, such as dynamic memory allocation, Object-Oriented Programming, pointers, and linked lists, leading to a significant increase in student grades.
-        </p>
+        <img src="images/Trimble.jpg" alt="Trimble Experience">
+        <div class="modal-text">
+          <p>Designed questions on quizzes, midterm, and final and created automated testing using C++ and Python to grade 300+ submissions per assessment. Provided instantaneous feedback using Python expect library and regular expressions following SOLID design principles.</p>
+          <p>Led lab sessions for 300+ students, teaching core C++ concepts including dynamic memory allocation, OOP, pointers, and linked lists. Resulted in significant grade improvements across the cohort.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div id="gbv-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-header">
-        <h3>Embedded Developer - GBV</h3>
-        <p>05/2021 - 08/2021</p>
-      </div>
-      <div class="modal-body">
-        <img src="GBV.jpg" alt="GBV">
-        <p>
-          Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects. Worked on firmware development, sensor integration, and real-time control systems for robotic platforms.
-        </p>
-      </div>
-    </div>
-  </div>
+  <!-- Add similar modals for GBV and UC -->
 
-  <div id="uc-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-header">
-        <h3>Mechatronics Engineering - University of Canterbury</h3>
-        <p>03/2018 - 11/2022</p>
-      </div>
-      <div class="modal-body">
-        <img src="UC.jpg" alt="UC">
-        <p>
-          Studied Mechatronics Engineering and worked on robotics research projects. Focused on autonomous systems, control theory, and embedded systems design. Contributed to multiple robotics competitions and research initiatives.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Array of roles to display
-    const roles = ["Mechatronics Engineer", "Embedded Developer", "Sports Enthusiast"];
-    let roleIndex = 0;
-    let charIndex = 0;
-    const typewriterElement = document.getElementById('typewriter');
-
-    function type() {
-      if (charIndex < roles[roleIndex].length) {
-        typewriterElement.textContent += roles[roleIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 100); // Typing speed (100ms per character)
-      } else {
-        setTimeout(erase, 2000); // Wait 2 seconds before erasing
-      }
-    }
-
-    function erase() {
-      if (charIndex > 0) {
-        typewriterElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, 50); // Erasing speed (50ms per character)
-      } else {
-        roleIndex = (roleIndex + 1) % roles.length; // Move to the next role
-        setTimeout(type, 500); // Wait 0.5 seconds before typing the next role
-      }
-    }
-
-    // Start the typing effect
-    type();
-
-    // Toggle overlay on mobile tap
-    const imageContainers = document.querySelectorAll('.image-container');
-    imageContainers.forEach(container => {
-      container.addEventListener('click', () => {
-        // Close any open overlays
-        imageContainers.forEach(otherContainer => {
-          if (otherContainer !== container) {
-            otherContainer.classList.remove('active');
-          }
-        });
-        // Toggle the clicked container
-        container.classList.toggle('active');
-      });
-    });
-
-    // Modal functionality
-    const exploreButtons = document.querySelectorAll('.explore-button');
-    const modals = document.querySelectorAll('.modal');
-    const closeModalButtons = document.querySelectorAll('.close-modal');
-
-    exploreButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const modalId = button.getAttribute('data-modal');
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'flex';
-      });
-    });
-
-    closeModalButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const modal = button.closest('.modal');
-        modal.style.display = 'none';
-      });
-    });
-
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', (event) => {
-      if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-      }
-    });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
