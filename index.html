@@ -7,220 +7,11 @@
   <!-- Add Poppins font from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* (Keep all previous styles except the ones modified below) */
 
-    /* Header styling */
-    header {
-      background-color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-
-    .header-left, .header-right {
-      display: flex;
-      gap: 15px;
-    }
-
-    .header-left a, .header-right a {
-      text-decoration: none;
-      color: black;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .header-left a:hover, .header-right a:hover {
-      color: #007BFF;
-    }
-
-    /* Full-page background image */
-    .hero-section {
-      background-image: url('background.jpg'); /* Replace with your image */
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: white;
-      font-family: 'Poppins', sans-serif;
+    /* Modified: Modal header alignment */
+    .modal-header {
       text-align: center;
-      padding: 0 20px;
-    }
-
-    /* Large text for name */
-    h1 {
-      font-size: 3rem; /* Adjusted for mobile */
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    /* Smaller text for description */
-    p {
-      font-size: 1.2rem; /* Adjusted for mobile */
-      font-weight: 600;
-    }
-
-    /* Typing effect for the switching text */
-    .typewriter {
-      display: inline-block;
-      color: red;
-    }
-
-    .typewriter::after {
-      content: '|';
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-
-    /* Education & Experience section */
-    .experience-section {
-      background-color: white;
-      padding: 60px 20px; /* Adjusted padding for mobile */
-      text-align: center;
-    }
-
-    .experience-section h2 {
-      font-size: 2.5rem; /* Adjusted for mobile */
-      font-weight: 700;
-      color: black;
-      margin-bottom: 30px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    /* Image row styling */
-    .image-row {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .image-container {
-      position: relative;
-      width: 30%; /* Default width for desktop */
-      max-width: 500px; /* Larger images on desktop */
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .image-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .image-container:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .image-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7); /* Dark overlay */
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    /* Hover effect for desktop */
-    @media (hover: hover) {
-      .image-container:hover .image-overlay {
-        opacity: 1;
-      }
-    }
-
-    /* Active class for mobile tap */
-    .image-container.active .image-overlay {
-      opacity: 1;
-    }
-
-    .image-overlay h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .image-overlay p {
-      font-size: 0.9rem; /* Adjusted for mobile */
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 15px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .image-overlay .explore-button {
-      font-size: 0.9rem; /* Adjusted for mobile */
-      font-weight: 500;
-      color: white;
-      background-color: #007BFF;
-      padding: 8px 16px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-    }
-
-    .image-overlay .explore-button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1001;
-    }
-
-    .modal-content {
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 1000px;
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
     }
 
     .modal-header h3 {
@@ -228,274 +19,96 @@
       font-weight: 700;
       color: black;
       margin-bottom: 5px;
-      font-family: 'Poppins', sans-serif;
     }
 
     .modal-header p {
       font-size: 1rem;
       color: #666;
+      margin-bottom: 20px;
+    }
+
+    /* New: Skills Section */
+    .skills-section {
+      background-color: #f8f9fa;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .skills-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: black;
+      margin-bottom: 30px;
       font-family: 'Poppins', sans-serif;
     }
 
-    .modal-body {
-      display: flex;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      align-items: flex-start;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    .modal-body img {
-      width: 45%;
+    .skill-item {
+      background-color: white;
+      padding: 20px;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
-    .modal-body p {
-      font-size: 1rem;
-      line-height: 1.6;
-      font-family: 'Poppins', sans-serif;
+    .skill-item h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
       color: #333;
     }
 
-    .close-modal {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 1.5rem;
-      color: black;
-      cursor: pointer;
-    }
-
-    /* Media Queries for Mobile */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem; /* Smaller font size for mobile */
-      }
-
-      p {
-        font-size: 1rem; /* Smaller font size for mobile */
-      }
-
-      .experience-section h2 {
-        font-size: 2rem; /* Smaller font size for mobile */
-      }
-
-      .header-left, .header-right {
-        gap: 10px; /* Smaller gap for mobile */
-      }
-
-      .header-left a, .header-right a {
-        font-size: 0.8rem; /* Smaller font size for mobile */
-      }
-
-      .header-right {
-        display: none; /* Hide header-right on mobile */
-      }
-
-      .image-container {
-        width: 100%; /* Full width on mobile */
-        max-width: 100%; /* No max-width on mobile */
-      }
-
-      .image-overlay h3 {
-        font-size: 1.2rem; /* Smaller font size for mobile */
-      }
-
-      .image-overlay p {
-        font-size: 0.8rem; /* Smaller font size for mobile */
-      }
-
-      .image-overlay .explore-button {
-        font-size: 0.8rem; /* Smaller font size for mobile */
-      }
-
-      .modal-body {
-        flex-direction: column;
-      }
-
-      .modal-body img {
-        width: 100%;
-      }
+    .skill-item p {
+      font-size: 1rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <a href="https://drive.google.com/file/d/1ju6bedwwfPkT99p7R48sqO0ELahVZaSO/view?usp=sharing" target="_blank">Resume</a>
-      <a href="https://drive.google.com/file/d/1tMQr8glKQ-C3ojaV1GzCGWmJbmKNPbDr/view?usp=sharing" target="_blank">Transcript</a>
-    </div>
-    <div class="header-right">
-      <a href="#">Home</a>
-      <a href="#experience">Education & Experience</a>
-      <a href="#">Skills</a>
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <h1>Hi, My name is Conal Smith</h1>
-    <p>I am a <span class="typewriter" id="typewriter"></span></p>
-  </section>
+  <!-- (Keep header and hero section the same) -->
 
   <!-- Education & Experience Section -->
   <section id="experience" class="experience-section">
     <h2>Education & Experience</h2>
     <div class="image-row">
-      <div class="image-container">
-        <img src="Trimble.jpg" alt="Trimble">
-        <div class="image-overlay">
-          <h3>Trimble</h3>
-          <p>I worked on the body firmware controls team, and developed lighting applications for Tesla vehicles.</p>
-          <div class="explore-button" data-modal="trimble-modal">Explore</div>
-        </div>
+      <!-- (Keep image containers the same) -->
+    </div>
+  </section>
+
+  <!-- New: Skills Section -->
+  <section class="skills-section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <h3>Programming Languages</h3>
+        <p>C, C++, Python, MATLAB</p>
       </div>
-      <div class="image-container">
-        <img src="GBV.jpg" alt="GBV">
-        <div class="image-overlay">
-          <h3>GBV</h3>
-          <p>Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects.</p>
-          <div class="explore-button" data-modal="gbv-modal">Explore</div>
-        </div>
+      <div class="skill-item">
+        <h3>Embedded Systems</h3>
+        <p>Microcontrollers, Firmware Development, RTOS</p>
       </div>
-      <div class="image-container">
-        <img src="UC.jpg" alt="UC">
-        <div class="image-overlay">
-          <h3>University of Canterbury</h3>
-          <p>Studied Mechatronics Engineering and worked on robotics research projects.</p>
-          <div class="explore-button" data-modal="uc-modal">Explore</div>
-        </div>
+      <div class="skill-item">
+        <h3>Robotics</h3>
+        <p>Autonomous Systems, Control Theory, ROS</p>
+      </div>
+      <div class="skill-item">
+        <h3>Software Tools</h3>
+        <p>Git, Linux, Docker, CI/CD</p>
       </div>
     </div>
   </section>
 
-  <!-- Modals -->
-  <div id="trimble-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-header">
-        <h3>Teaching Assistant - University of Waterloo</h3>
-        <p>09/2020 - 12/2020</p>
-      </div>
-      <div class="modal-body">
-        <img src="Trimble.jpg" alt="Trimble Experience">
-        <p>
-          Designed questions on quizzes, midterm, and final and created automated testing using C++ and Python to grade 300+ submissions per assessment. Provided instantaneous feedback using Python expect library and regular expressions following SOLID design principles. Led lab sessions for 300+ students, teaching core C++ concepts including dynamic memory allocation, OOP, pointers, and linked lists. Resulted in significant grade improvements across the cohort.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div id="gbv-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-header">
-        <h3>Embedded Developer - GBV</h3>
-        <p>05/2021 - 08/2021</p>
-      </div>
-      <div class="modal-body">
-        <img src="GBV.jpg" alt="GBV Experience">
-        <p>
-          Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects. Worked on firmware development, sensor integration, and real-time control systems for robotic platforms.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div id="uc-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-header">
-        <h3>Mechatronics Engineering - University of Canterbury</h3>
-        <p>03/2018 - 11/2022</p>
-      </div>
-      <div class="modal-body">
-        <img src="UC.jpg" alt="UC Experience">
-        <p>
-          Studied Mechatronics Engineering and worked on robotics research projects. Focused on autonomous systems, control theory, and embedded systems design. Contributed to multiple robotics competitions and research initiatives.
-        </p>
-      </div>
-    </div>
-  </div>
+  <!-- (Keep modals the same) -->
 
   <script>
-    // Array of roles to display
-    const roles = ["Mechatronics Engineer", "Embedded Developer", "Sports Enthusiast"];
-    let roleIndex = 0;
-    let charIndex = 0;
-    const typewriterElement = document.getElementById('typewriter');
-
-    function type() {
-      if (charIndex < roles[roleIndex].length) {
-        typewriterElement.textContent += roles[roleIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 100); // Typing speed (100ms per character)
-      } else {
-        setTimeout(erase, 2000); // Wait 2 seconds before erasing
-      }
-    }
-
-    function erase() {
-      if (charIndex > 0) {
-        typewriterElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, 50); // Erasing speed (50ms per character)
-      } else {
-        roleIndex = (roleIndex + 1) % roles.length; // Move to the next role
-        setTimeout(type, 500); // Wait 0.5 seconds before typing the next role
-      }
-    }
-
-    // Start the typing effect
-    type();
-
-    // Toggle overlay on mobile tap
-    const imageContainers = document.querySelectorAll('.image-container');
-    imageContainers.forEach(container => {
-      container.addEventListener('click', () => {
-        // Close any open overlays
-        imageContainers.forEach(otherContainer => {
-          if (otherContainer !== container) {
-            otherContainer.classList.remove('active');
-          }
-        });
-        // Toggle the clicked container
-        container.classList.toggle('active');
-      });
-    });
-
-    // Modal functionality
-    const exploreButtons = document.querySelectorAll('.explore-button');
-    const modals = document.querySelectorAll('.modal');
-    const closeModalButtons = document.querySelectorAll('.close-modal');
-
-    exploreButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const modalId = button.getAttribute('data-modal');
-        document.getElementById(modalId).style.display = 'flex';
-      });
-    });
-
-    closeModalButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        button.closest('.modal').style.display = 'none';
-      });
-    });
-
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', (e) => {
-      if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
-      }
-    });
-
-    // Close modal on ESC key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        modals.forEach(modal => modal.style.display = 'none');
-      }
-    });
+    // (Keep previous JavaScript the same)
   </script>
 </body>
 </html>
