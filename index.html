@@ -445,6 +445,54 @@
       background-color: #0056b3;
     }
 
+    /* Contact Section */
+    .contact-section {
+      background-color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-section p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .contact-icons a {
+      text-decoration: none;
+    }
+
+    .contact-icons img {
+      width: 50px; /* Adjust size as needed */
+      height: 50px; /* Adjust size as needed */
+      transition: transform 0.3s ease;
+    }
+
+    .contact-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .contact-email {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
     /* Media Queries for Mobile */
     @media (max-width: 768px) {
       h1 {
@@ -524,11 +572,21 @@
       .projects-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 projects per row on mobile */
       }
+
+      .contact-icons img {
+        width: 40px; /* Smaller icons for mobile */
+        height: 40px;
+      }
     }
 
     @media (max-width: 480px) {
       .projects-grid {
         grid-template-columns: 1fr; /* 1 project per row on smaller screens */
+      }
+
+      .contact-icons img {
+        width: 35px; /* Even smaller icons for very small screens */
+        height: 35px;
       }
     }
   </style>
@@ -545,7 +603,7 @@
       <a href="#skills">Skills</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#">Contact</a>
+      <a href="#contact">Contact</a>
     </div>
   </header>
 
@@ -675,6 +733,21 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    <p>Find me at the following:</p>
+    <div class="contact-icons">
+      <a href="https://www.linkedin.com/in/conalhsmith/" target="_blank">
+        <img src="linkedin.jpg" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/conalhsmith" target="_blank">
+        <img src="github.jpg" alt="GitHub">
+      </a>
+    </div>
+    <p class="contact-email">Email: conalhsmith@gmail.com</p>
   </section>
 
   <!-- Modals -->
