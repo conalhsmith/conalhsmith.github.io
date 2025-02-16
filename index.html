@@ -154,8 +154,16 @@
       box-sizing: border-box;
     }
 
+    /* Hover effect for desktop */
+    @media (hover: hover) {
+      .image-container:hover .image-overlay {
+        opacity: 1;
+      }
+    }
+
+    /* Active class for mobile tap */
     .image-container.active .image-overlay {
-      opacity: 1; /* Show overlay when active */
+      opacity: 1;
     }
 
     .image-overlay h3 {
