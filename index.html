@@ -316,35 +316,43 @@
     .about-section {
       background-color: white;
       padding: 60px 20px;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .about-content {
       display: flex;
       align-items: center;
       gap: 40px;
+      justify-content: center;
     }
 
-    .about-section .about-text {
+    .about-text {
       flex: 1;
+      max-width: 600px;
+      text-align: left;
       font-family: 'Poppins', sans-serif;
       color: #333;
     }
 
-    .about-section .about-text h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .about-section .about-text p {
+    .about-text p {
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 20px;
     }
 
-    .about-section .about-image {
+    .about-image {
       flex: 1;
-      text-align: center;
+      max-width: 300px; /* Smaller image size */
     }
 
-    .about-section .about-image img {
+    .about-image img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
@@ -409,17 +417,21 @@
         font-size: 0.9rem;
       }
 
-      .about-section {
+      .about-content {
         flex-direction: column;
         text-align: center;
       }
 
-      .about-section .about-text h2 {
-        font-size: 2rem;
+      .about-text {
+        text-align: center;
       }
 
-      .about-section .about-text p {
+      .about-text p {
         font-size: 0.9rem;
+      }
+
+      .about-image {
+        max-width: 100%;
       }
     }
   </style>
@@ -506,14 +518,16 @@
 
   <!-- About Me Section -->
   <section id="about" class="about-section">
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>
-        I am a passionate Mechatronics Engineer with a strong background in embedded systems, robotics, and software development. My experience spans across various industries, including automotive, robotics, and academia. I thrive on solving complex problems and developing innovative solutions that push the boundaries of technology. When I'm not coding or tinkering with hardware, you can find me exploring the outdoors or engaging in sports.
-      </p>
-    </div>
-    <div class="about-image">
-      <img src="about-me.jpg" alt="About Me">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I am a passionate Mechatronics Engineer with a strong background in embedded systems, robotics, and software development. My experience spans across various industries, including automotive, robotics, and academia. I thrive on solving complex problems and developing innovative solutions that push the boundaries of technology. When I'm not coding or tinkering with hardware, you can find me exploring the outdoors or engaging in sports.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="about-me.jpg" alt="About Me">
+      </div>
     </div>
   </section>
 
