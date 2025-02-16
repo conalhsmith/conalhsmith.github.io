@@ -191,10 +191,77 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
       font-family: 'Poppins', sans-serif;
+      cursor: pointer;
     }
 
     .image-overlay .explore-button:hover {
       background-color: #0056b3;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 1000px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .modal-header h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: black;
+      margin-bottom: 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .modal-header p {
+      font-size: 1rem;
+      color: #666;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .modal-body {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .modal-body img {
+      width: 45%;
+      border-radius: 10px;
+    }
+
+    .modal-body p {
+      font-size: 1rem;
+      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: black;
+      cursor: pointer;
     }
 
     /* Media Queries for Mobile */
@@ -239,6 +306,14 @@
       .image-overlay .explore-button {
         font-size: 0.8rem; /* Smaller font size for mobile */
       }
+
+      .modal-body {
+        flex-direction: column;
+      }
+
+      .modal-body img {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -273,7 +348,7 @@
         <div class="image-overlay">
           <h3>Trimble</h3>
           <p>I worked on the body firmware controls team, and developed lighting applications for Tesla vehicles.</p>
-          <div class="explore-button">Explore</div>
+          <div class="explore-button" data-modal="trimble-modal">Explore</div>
         </div>
       </div>
       <div class="image-container">
@@ -281,7 +356,7 @@
         <div class="image-overlay">
           <h3>GBV</h3>
           <p>Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects.</p>
-          <div class="explore-button">Explore</div>
+          <div class="explore-button" data-modal="gbv-modal">Explore</div>
         </div>
       </div>
       <div class="image-container">
@@ -289,11 +364,60 @@
         <div class="image-overlay">
           <h3>University of Canterbury</h3>
           <p>Studied Mechatronics Engineering and worked on robotics research projects.</p>
-          <div class="explore-button">Explore</div>
+          <div class="explore-button" data-modal="uc-modal">Explore</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Modals -->
+  <div id="trimble-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h3>Teaching Assistant - University of Waterloo</h3>
+        <p>09/2020 - 12/2020</p>
+      </div>
+      <div class="modal-body">
+        <img src="Trimble.jpg" alt="Trimble Experience">
+        <p>
+          Designed questions on quizzes, midterm, and final and created automated testing using C++ and Python to grade 300+ submissions per assessment. Provided instantaneous feedback using Python expect library and regular expressions following SOLID design principles. Led lab sessions for 300+ students, teaching core C++ concepts including dynamic memory allocation, OOP, pointers, and linked lists. Resulted in significant grade improvements across the cohort.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="gbv-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h3>Embedded Developer - GBV</h3>
+        <p>05/2021 - 08/2021</p>
+      </div>
+      <div class="modal-body">
+        <img src="GBV.jpg" alt="GBV Experience">
+        <p>
+          Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects. Worked on firmware development, sensor integration, and real-time control systems for robotic platforms.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="uc-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h3>Mechatronics Engineering - University of Canterbury</h3>
+        <p>03/2018 - 11/2022</p>
+      </div>
+      <div class="modal-body">
+        <img src="UC.jpg" alt="UC Experience">
+        <p>
+          Studied Mechatronics Engineering and worked on robotics research projects. Focused on autonomous systems, control theory, and embedded systems design. Contributed to multiple robotics competitions and research initiatives.
+        </p>
+      </div>
+    </div>
+  </div>
 
   <script>
     // Array of roles to display
@@ -340,7 +464,38 @@
         container.classList.toggle('active');
       });
     });
+
+    // Modal functionality
+    const exploreButtons = document.querySelectorAll('.explore-button');
+    const modals = document.querySelectorAll('.modal');
+    const closeModalButtons = document.querySelectorAll('.close-modal');
+
+    exploreButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const modalId = button.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'flex';
+      });
+    });
+
+    closeModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.closest('.modal').style.display = 'none';
+      });
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+      }
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modals.forEach(modal => modal.style.display = 'none');
+      }
+    });
   </script>
 </body>
-</html>
 </html>
