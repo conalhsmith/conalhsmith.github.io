@@ -286,7 +286,7 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       justify-content: center;
       padding: 0 20px;
@@ -303,6 +303,19 @@
       color: #333;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .skill-item p {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #666;
     }
 
     .skill-item:hover {
@@ -362,7 +375,7 @@
       }
 
       .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       }
 
       .skill-item {
@@ -428,14 +441,30 @@
   <section id="skills" class="skills-section">
     <h2>Skills</h2>
     <div class="skills-grid">
-      <div class="skill-item">C++</div>
-      <div class="skill-item">Python</div>
-      <div class="skill-item">Embedded Systems</div>
-      <div class="skill-item">Robotics</div>
-      <div class="skill-item">Control Systems</div>
-      <div class="skill-item">Firmware Development</div>
-      <div class="skill-item">Sensor Integration</div>
-      <div class="skill-item">Real-Time Systems</div>
+      <div class="skill-item">
+        <img src="C_lang.jpg" alt="C">
+        <p>C, C++, CUDA</p>
+      </div>
+      <div class="skill-item">
+        <img src="code.jpg" alt="Python">
+        <p>Python, MATLAB, R</p>
+      </div>
+      <div class="skill-item">
+        <img src="CPU.jpg" alt="Arduino">
+        <p>Arduino, Raspberry Pi, ESP8266</p>
+      </div>
+      <div class="skill-item">
+        <img src="OpenCV.jpg" alt="OpenCV">
+        <p>OpenCV and learning TensorFlow</p>
+      </div>
+      <div class="skill-item">
+        <img src="CAD.jpg" alt="CAD">
+        <p>Solidworks, AutoCAD, Blender</p>
+      </div>
+      <div class="skill-item">
+        <img src="ROS.jpg" alt="ROS">
+        <p>ROS, ROS2, Gazebo, and Isaac Sim</p>
+      </div>
     </div>
   </section>
 
