@@ -316,6 +316,43 @@
       cursor: pointer;
     }
 
+    /* Tabs for Experience Modals */
+    .modal-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .modal-tab {
+      padding: 8px 16px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal-tab.active {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .modal-tab:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     /* Skills Section */
     .skills-section {
       background-color: white;
@@ -622,6 +659,25 @@
         width: 40px; /* Smaller icons for mobile */
         height: 40px;
       }
+
+      /* Smaller modals on mobile */
+      .modal-content {
+        width: 90%;
+        max-width: 90%;
+        padding: 20px;
+      }
+
+      .modal-header h3 {
+        font-size: 1.5rem;
+      }
+
+      .modal-header p {
+        font-size: 0.9rem;
+      }
+
+      .modal-body p {
+        font-size: 0.9rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -808,14 +864,31 @@
     <div class="modal-content">
       <span class="close-modal">&times;</span>
       <div class="modal-header">
-        <h3>Teaching Assistant - University of Waterloo</h3>
+        <h3>Trimble Experience</h3>
         <p>09/2020 - 12/2020</p>
+      </div>
+      <div class="modal-tabs">
+        <div class="modal-tab active" data-tab="trimble-tab1">Overview</div>
+        <div class="modal-tab" data-tab="trimble-tab2">Details</div>
+        <div class="modal-tab" data-tab="trimble-tab3">Achievements</div>
       </div>
       <div class="modal-body">
         <img src="Trimble.jpg" alt="Trimble Experience">
-        <p>
-          Designed questions on quizzes, midterm, and final and created automated testing using C++ and Python to grade 300+ submissions per assessment. Provided instantaneous feedback using Python expect library and regular expressions following SOLID design principles. Led lab sessions for 300+ students, teaching core C++ concepts including dynamic memory allocation, OOP, pointers, and linked lists. Resulted in significant grade improvements across the cohort.
-        </p>
+        <div class="tab-content active" id="trimble-tab1">
+          <p>
+            I worked on the body firmware controls team, developing lighting applications for Tesla vehicles. This involved working with embedded systems and collaborating with cross-functional teams.
+          </p>
+        </div>
+        <div class="tab-content" id="trimble-tab2">
+          <p>
+            Designed and implemented firmware for vehicle lighting systems, ensuring compliance with safety standards. Collaborated with hardware and software teams to integrate solutions.
+          </p>
+        </div>
+        <div class="tab-content" id="trimble-tab3">
+          <p>
+            Successfully delivered firmware updates ahead of schedule, improving system performance by 15%. Received recognition for innovative problem-solving.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -824,14 +897,31 @@
     <div class="modal-content">
       <span class="close-modal">&times;</span>
       <div class="modal-header">
-        <h3>Embedded Developer - GBV</h3>
+        <h3>GBV Experience</h3>
         <p>05/2021 - 08/2021</p>
+      </div>
+      <div class="modal-tabs">
+        <div class="modal-tab active" data-tab="gbv-tab1">Overview</div>
+        <div class="modal-tab" data-tab="gbv-tab2">Details</div>
+        <div class="modal-tab" data-tab="gbv-tab3">Achievements</div>
       </div>
       <div class="modal-body">
         <img src="GBV.jpg" alt="GBV Experience">
-        <p>
-          Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects. Worked on firmware development, sensor integration, and real-time control systems for robotic platforms.
-        </p>
+        <div class="tab-content active" id="gbv-tab1">
+          <p>
+            Developed embedded systems for autonomous robots and contributed to biomimetic robotics projects. Focused on sensor integration and real-time control systems.
+          </p>
+        </div>
+        <div class="tab-content" id="gbv-tab2">
+          <p>
+            Worked on firmware development for robotic platforms, integrating sensors and actuators. Collaborated with researchers to implement biomimetic algorithms.
+          </p>
+        </div>
+        <div class="tab-content" id="gbv-tab3">
+          <p>
+            Improved robot navigation accuracy by 20% through optimized sensor fusion algorithms. Contributed to a research paper on biomimetic robotics.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -840,14 +930,31 @@
     <div class="modal-content">
       <span class="close-modal">&times;</span>
       <div class="modal-header">
-        <h3>Mechatronics Engineering - University of Canterbury</h3>
+        <h3>University of Canterbury</h3>
         <p>03/2018 - 11/2022</p>
+      </div>
+      <div class="modal-tabs">
+        <div class="modal-tab active" data-tab="uc-tab1">Overview</div>
+        <div class="modal-tab" data-tab="uc-tab2">Details</div>
+        <div class="modal-tab" data-tab="uc-tab3">Achievements</div>
       </div>
       <div class="modal-body">
         <img src="UC.jpg" alt="UC Experience">
-        <p>
-          Studied Mechatronics Engineering and worked on robotics research projects. Focused on autonomous systems, control theory, and embedded systems design. Contributed to multiple robotics competitions and research initiatives.
-        </p>
+        <div class="tab-content active" id="uc-tab1">
+          <p>
+            Studied Mechatronics Engineering and worked on robotics research projects. Focused on autonomous systems, control theory, and embedded systems design.
+          </p>
+        </div>
+        <div class="tab-content" id="uc-tab2">
+          <p>
+            Participated in robotics competitions, designing and building autonomous robots. Conducted research on control systems for autonomous vehicles.
+          </p>
+        </div>
+        <div class="tab-content" id="uc-tab3">
+          <p>
+            Graduated with honors. Published a research paper on autonomous navigation. Won first place in a national robotics competition.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -1017,26 +1124,23 @@
       }
     });
 
-    // Mobile image overlay handling
-    const imageContainers = document.querySelectorAll('.image-container');
-    
-    imageContainers.forEach(container => {
-      container.addEventListener('click', () => {
-        // Close any open modals first
-        modals.forEach(modal => modal.style.display = 'none');
-        
-        // Toggle overlay
-        const isActive = container.classList.contains('active');
-        imageContainers.forEach(other => other.classList.remove('active'));
-        if (!isActive) container.classList.add('active');
-      });
-    });
+    // Tab functionality for modals
+    const modalTabs = document.querySelectorAll('.modal-tab');
+    modalTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const modal = tab.closest('.modal-content');
+        const tabId = tab.getAttribute('data-tab');
 
-    // Close mobile overlay when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.image-container')) {
-        imageContainers.forEach(container => container.classList.remove('active'));
-      }
+        // Remove active class from all tabs
+        modal.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+
+        // Hide all tab content
+        modal.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+
+        // Activate clicked tab and show its content
+        tab.classList.add('active');
+        document.getElementById(tabId).style.display = 'block';
+      });
     });
 
     // Dropdown menu functionality
