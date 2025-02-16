@@ -956,13 +956,14 @@
     let charIndex = 0;
     const typewriterElement = document.getElementById('typewriter');
 
+    // Typing effect functions
     function type() {
       if (charIndex < roles[roleIndex].length) {
         typewriterElement.textContent += roles[roleIndex].charAt(charIndex);
         charIndex++;
-        setTimeout(type, 100); // Typing speed (100ms per character)
+        setTimeout(type, 100);
       } else {
-        setTimeout(erase, 2000); // Wait 2 seconds before erasing
+        setTimeout(erase, 2000);
       }
     }
 
@@ -970,35 +971,27 @@
       if (charIndex > 0) {
         typewriterElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
         charIndex--;
-        setTimeout(erase, 50); // Erasing speed (50ms per character)
+        setTimeout(erase, 50);
       } else {
-        roleIndex = (roleIndex + 1) % roles.length; // Move to the next role
-        setTimeout(type, 500); // Wait 0.5 seconds before typing the next role
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(type, 500);
       }
     }
 
-    // Start the typing effect
+    // Start typing effect
     type();
-
-    // Toggle overlay on mobile tap
-    const imageContainers = document.querySelectorAll('.image-container');
-    imageContainers.forEach(container => {
-      container.addEventListener('click', () => {
-        // Close any open overlays
-        imageContainers.forEach(otherContainer => {
-          if (otherContainer !== container) {
-            otherContainer.classList.remove('active');
-          }
-        });
-        // Toggle the clicked container
-        container.classList.toggle('active');
-      });
-    });
 
     // Modal functionality
     const exploreButtons = document.querySelectorAll('.explore-button');
     const modals = document.querySelectorAll('.modal');
     const closeModalButtons = document.querySelectorAll('.close-modal');
+
+    // Modal open/close functions
+    function handleModalClose(e) {
+      if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+      }
+    }
 
     exploreButtons.forEach(button => {
       button.addEventListener('click', () => {
@@ -1013,12 +1006,9 @@
       });
     });
 
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', (e) => {
-      if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
-      }
-    });
+    // Close modal on outside click/touch
+    window.addEventListener('click', handleModalClose);
+    window.addEventListener('touchstart', handleModalClose);
 
     // Close modal on ESC key
     document.addEventListener('keydown', (e) => {
@@ -1027,11 +1017,43 @@
       }
     });
 
+    // Mobile image overlay handling
+    const imageContainers = document.querySelectorAll('.image-container');
+    
+    imageContainers.forEach(container => {
+      container.addEventListener('click', () => {
+        // Close any open modals first
+        modals.forEach(modal => modal.style.display = 'none');
+        
+        // Toggle overlay
+        const isActive = container.classList.contains('active');
+        imageContainers.forEach(other => other.classList.remove('active'));
+        if (!isActive) container.classList.add('active');
+      });
+    });
+
+    // Close mobile overlay when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.image-container')) {
+        imageContainers.forEach(container => container.classList.remove('active'));
+      }
+    });
+
     // Dropdown menu functionality
     function toggleDropdown() {
       const dropdownMenu = document.getElementById('dropdownMenu');
       dropdownMenu.classList.toggle('active');
     }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      const menuIcon = document.querySelector('.menu-icon');
+      
+      if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
+        dropdownMenu.classList.remove('active');
+      }
+    });
   </script>
 </body>
 </html>
