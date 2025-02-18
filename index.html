@@ -256,6 +256,7 @@
     .modal-body img {
       width: 100%;
       border-radius: 10px;
+      margin-top: 20px; /* Move image below text */
     }
 
     .modal-body p {
@@ -813,7 +814,6 @@
         <div class="modal-tab" data-tab="trimble-tab3">Recommendations</div>
       </div>
       <div class="modal-body">
-        <img src="Trimble.jpg" alt="Trimble Experience">
         <div class="tab-content active" id="trimble-tab1">
           <p>
             As a Research and Design Intern at Trimble, I developed a quality inspection system for magnets, verifying their pattern and strength before assembly. I designed and prototyped two solutions—a computer vision system utilizing machine learning for pattern classification and a Hall sensor PCB system with 64 sensors for high-resolution magnetic analysis—achieving a 100% classification success rate while ensuring feasibility for high-speed production.
@@ -845,6 +845,7 @@
             Recommendation: 
           </p>
         </div>
+        <img id="trimble-image" src="Trimble1.jpg" alt="Trimble Experience">
       </div>
     </div>
   </div>
@@ -862,7 +863,6 @@
         <div class="modal-tab" data-tab="gbv-tab3">Recommendations</div>
       </div>
       <div class="modal-body">
-        <img src="GBV.jpg" alt="GBV Experience">
         <div class="tab-content active" id="gbv-tab1">
           <p>
             Over the 2023/2024 summer holidays, I had the opportunity to intern at GBV, where I contributed to the development of a fleet of first-of-their-kind hydrogen chase boats for the America's Cup. I specialised as an electrical design engineer, working closely with state-of-the-art components, such as Toyota fuel cells and other high-value equipment, to integrate the hydrogen subsystem.
@@ -878,6 +878,7 @@
             Conal has a great work ethic with a high consistency in his output. Conal assisted with the development of hydrogen vehicle subsystems, the development department works at an accelerated pace and his assistance allowed us to maintain pace without delaying milestones. Keen to keep a move on with work, he is motivated toward keeping good progress. Conal has dependable attendance and his consistent output left us happy with his contribution. He was a valued team member, and I am happy to recommend Conal to any prospective employer.
           </p>
         </div>
+        <img id="gbv-image" src="GBV1.jpg" alt="GBV Experience">
       </div>
     </div>
   </div>
@@ -893,12 +894,12 @@
         <div class="modal-tab active" data-tab="uc-tab1">Overview</div>
       </div>
       <div class="modal-body">
-        <img src="UC.jpg" alt="UC Experience">
         <div class="tab-content active" id="uc-tab1">
           <p>
             Final year student studying Mechatronics engineering. Current GPA of 8.33. Studies focussed on robotics and embedded systems. 
           </p>
         </div>
+        <img id="uc-image" src="UC1.jpg" alt="UC Experience">
       </div>
     </div>
   </div>
@@ -912,10 +913,10 @@
         <p>2025</p>
       </div>
       <div class="modal-body">
-        <img src="project1.jpg" alt="Project 1">
         <p>
         Description here.
         </p>
+        <img id="project1-image" src="project1a.jpg" alt="Project 1">
       </div>
     </div>
   </div>
@@ -928,13 +929,13 @@
         <p>2024</p>
       </div>
       <div class="modal-body">
-        <img src="project2.jpg" alt="Project 2">
         <p>
         The 2024 Robocop competition follows a Harry Potter theme and resembles a mechatronics version of quidditch. Teams of 3 are required to design and build autonomous robots to compete in a knockout competition at the end of the year. The goal of each round is to collect the largest number of weights, points being doubled if weights are delivered to the robot’s home base. The snitch may also be caught for bonus points. The robots must navigate an arena, littered with obstacles and traps such as fake weights and speedbumps. Collecting dummy weights will result in a penalty. Rounds are short, consisting of only 2 minutes meaning that weight detection, collection, and primary areas for teams to focus on.
         </p>
         <p>
           I was primarily responsbile for concept generation, and mechanical design. I was able to design and build a efficient weight collection system using a paddle and a ramp, testing concluding that it successfully collected weights 90% of the time. This design featured a continuity circuit for real/fake weight differentiation and a simple release gate to drop wreights at base. After concluding the mechanical design I designed the weight collection software, and assisted with navigational software (SLAM).
         </p>
+        <img id="project2-image" src="project2a.jpg" alt="Project 2">
       </div>
     </div>
   </div>
@@ -947,7 +948,6 @@
         <p>2024</p>
       </div>
       <div class="modal-body">
-        <img src="project3.jpg" alt="Project 3">
         <p>
           The goal of this project was to program a remote-controlled helicopter to execute autonomous flight maneuvers using a TIVA board with real-time kernel control.
         </p>
@@ -968,6 +968,7 @@
           GitHub Repository:<br>
           <a href="https://github.com/conalhsmith/Helicopter-Rig-Control-Project" target="_blank">Project Code</a>
         </p>
+        <img id="project3-image" src="project3a.jpg" alt="Project 3">
       </div>
     </div>
   </div>
@@ -980,7 +981,6 @@
         <p>2023</p>
       </div>
       <div class="modal-body">
-        <img src="project4.jpg" alt="Project 4">
         <p>
           Created from the ground up, including PCB design and assembly, fabrication and development of mechanical components, and programming. 
         </p>
@@ -993,6 +993,7 @@
         <p> 
           The programming stage seemed relatively simple, however the robot was unable to change speeds, which I discovered was due to the motor drivers not being connected to the PWM outputs of the MCU. This was a major learning lesson as it how a simple mistake within PCB design can effect the entire system. By performing simple wire bypasses and touching up the code, the robot was able to swiftly maneuver the given course.
         </p>
+        <img id="project4-image" src="project4a.jpg" alt="Project 4">
       </div>
     </div>
   </div>
@@ -1005,13 +1006,13 @@
         <p>2023</p>
       </div>
       <div class="modal-body">
-        <img src="project5.jpg" alt="Project 5">
         <p>
         The goal of this project was to develop a two-player game using UCFK4 microcontroller boards.  Objectives included utilizing provided API modules to abstract hardware dependence, demonstrating clean programming principles, and creating a game of chosen complexity. The project was to be completed in teams of two with randomly selected partners. To maximize productivity, we discussed our respective strengths and weaknesses relevant to the project and identified areas where we wanted to learn. We challenged ourselves to design a high-complexity game (PONG) to maximize the learning outcomes. Overall, we worked effectively as a team and produced a flawless game, as reflected in our final grade. 
         </p>
         <p>
         The repository for the project can be found here: https://github.com/conalhsmith/2-Player-Pong
         </p>
+        <img id="project5-image" src="project5a.jpg" alt="Project 5">
       </div>
     </div>
   </div>
@@ -1024,13 +1025,13 @@
         <p>2023</p>
       </div>
       <div class="modal-body">
-        <img src="project6.jpg" alt="Project 6">
         <p>
           This robot was inspired for the purpose of keeping my dog entertained whilst I studied. I completed this project before we had practiced applying technical knowledge to real applications within university coursework, so it was generally self taught. A challenging part of this project was actively avoiding all the similar projects online, as doing so would’ve taken away from my learning experience. 
         </p>
         <p>
           At this stage I didn’t have access to a 3D printer so I had to use some initiative in sourcing parts from around the house. Overall this project enhanced my problem solving abilities, and taught me how to split a challenging project into smaller, easier parts.
         </p>
+        <img id="project6-image" src="project6a.jpg" alt="Project 6">
       </div>
     </div>
   </div>
@@ -1123,6 +1124,41 @@
         dropdownMenu.classList.remove('active');
       }
     });
+
+    // Image switching functionality
+    function switchImages(imageId, imageSources, interval) {
+      let currentIndex = 0;
+      const imageElement = document.getElementById(imageId);
+
+      if (!imageElement) return;
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % imageSources.length;
+        imageElement.src = imageSources[currentIndex];
+      }, interval);
+    }
+
+    // Define image sources for each modal
+    const trimbleImages = ["Trimble1.jpg", "Trimble2.jpg"];
+    const gbvImages = ["GBV1.jpg", "GBV2.jpg"];
+    const ucImages = ["UC1.jpg", "UC2.jpg"];
+    const project1Images = ["project1a.jpg", "project1b.jpg"];
+    const project2Images = ["project2a.jpg", "project2b.jpg"];
+    const project3Images = ["project3a.jpg", "project3b.jpg"];
+    const project4Images = ["project4a.jpg", "project4b.jpg"];
+    const project5Images = ["project5a.jpg", "project5b.jpg"];
+    const project6Images = ["project6a.jpg", "project6b.jpg"];
+
+    // Start image switching for each modal
+    switchImages('trimble-image', trimbleImages, 3000);
+    switchImages('gbv-image', gbvImages, 3000);
+    switchImages('uc-image', ucImages, 3000);
+    switchImages('project1-image', project1Images, 3000);
+    switchImages('project2-image', project2Images, 3000);
+    switchImages('project3-image', project3Images, 3000);
+    switchImages('project4-image', project4Images, 3000);
+    switchImages('project5-image', project5Images, 3000);
+    switchImages('project6-image', project6Images, 3000);
   </script>
 </body>
 </html>
