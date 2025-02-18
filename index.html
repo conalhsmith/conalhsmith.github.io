@@ -4,17 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conal Smith - Portfolio</title>
-  <!-- Add Poppins font from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Basic Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Header styling */
     header {
       background-color: white;
       padding: 15px 20px;
@@ -46,7 +43,6 @@
       color: #007BFF;
     }
 
-    /* Mobile dropdown menu */
     .menu-icon {
       display: none;
       font-size: 1.5rem;
@@ -92,9 +88,8 @@
       }
     }
 
-    /* Full-page background image */
     .hero-section {
-      background-image: url('background.jpg'); /* Replace with your image */
+      background-image: url('background.jpg');
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -108,24 +103,21 @@
       padding: 0 20px;
     }
 
-    /* Large text for name */
     h1 {
-      font-size: 3rem; /* Adjusted for mobile */
+      font-size: 3rem;
       margin-bottom: 15px;
       font-weight: 700;
     }
 
-    /* Smaller text for description */
     p {
-      font-size: 1.5rem; /* Increased size for "I am a..." text */
+      font-size: 1.5rem;
       font-weight: 600;
     }
 
-    /* Typing effect for the switching text */
     .typewriter {
       display: inline-block;
       color: red;
-      font-size: 1.5rem; /* Increased size for typing text */
+      font-size: 1.5rem;
     }
 
     .typewriter::after {
@@ -139,22 +131,20 @@
       }
     }
 
-    /* Education & Experience section */
     .experience-section {
       background-color: white;
-      padding: 60px 20px; /* Adjusted padding for mobile */
+      padding: 60px 20px;
       text-align: center;
     }
 
     .experience-section h2 {
-      font-size: 2.5rem; /* Adjusted for mobile */
+      font-size: 2.5rem;
       font-weight: 700;
       color: black;
       margin-bottom: 30px;
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Image row styling */
     .image-row {
       display: flex;
       justify-content: center;
@@ -164,8 +154,8 @@
 
     .image-container {
       position: relative;
-      width: 30%; /* Default width for desktop */
-      max-width: 500px; /* Larger images on desktop */
+      width: 30%;
+      max-width: 500px;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -191,28 +181,27 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: none; /* Remove the dark overlay background */
+      background: none;
     }
 
     .image-overlay .explore-button {
-      font-size: 0.9rem; /* Match project button size */
+      font-size: 0.9rem;
       font-weight: 500;
       color: white;
       background-color: #007BFF;
-      padding: 8px 16px; /* Match project button padding */
+      padding: 8px 16px;
       border-radius: 5px;
       text-decoration: none;
       transition: background-color 0.3s ease;
       font-family: 'Poppins', sans-serif;
       cursor: pointer;
-      margin: 20px; /* Add some spacing from edges */
+      margin: 20px;
     }
 
     .image-overlay .explore-button:hover {
       background-color: #0056b3;
     }
 
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -258,12 +247,14 @@
 
     .modal-body {
       display: flex;
+      flex-direction: column;
       gap: 20px;
-      align-items: flex-start;
+      max-height: 60vh;
+      overflow-y: auto;
     }
 
     .modal-body img {
-      width: 45%;
+      width: 100%;
       border-radius: 10px;
     }
 
@@ -272,6 +263,7 @@
       line-height: 1.6;
       font-family: 'Poppins', sans-serif;
       color: #333;
+      margin-bottom: 15px;
     }
 
     .close-modal {
@@ -283,12 +275,13 @@
       cursor: pointer;
     }
 
-    /* Tabs for Experience Modals */
     .modal-tabs {
       display: flex;
       justify-content: center;
       gap: 10px;
       margin-bottom: 20px;
+      overflow-x: auto;
+      white-space: nowrap;
     }
 
     .modal-tab {
@@ -320,7 +313,6 @@
       display: block;
     }
 
-    /* Skills Section */
     .skills-section {
       background-color: white;
       padding: 60px 20px;
@@ -352,14 +344,14 @@
     }
 
     .skill-item img {
-      width: 100px; /* Fixed size for images */
-      height: 100px; /* Fixed size for images */
+      width: 100px;
+      height: 100px;
       margin-bottom: 10px;
-      transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+      transition: transform 0.3s ease;
     }
 
     .skill-item img:hover {
-      transform: scale(1.1); /* Increase size by 10% on hover */
+      transform: scale(1.1);
     }
 
     .skill-item p {
@@ -368,7 +360,6 @@
       color: #666;
     }
 
-    /* About Me Section */
     .about-section {
       background-color: white;
       padding: 60px 20px;
@@ -405,7 +396,7 @@
 
     .about-image {
       flex: 1;
-      max-width: 400px; /* Larger image size */
+      max-width: 400px;
     }
 
     .about-image img {
@@ -414,7 +405,6 @@
       border-radius: 10px;
     }
 
-    /* Projects Section */
     .projects-section {
       background-color: white;
       padding: 60px 20px;
@@ -430,7 +420,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 projects per row */
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       justify-content: center;
       padding: 0 20px;
@@ -442,13 +432,13 @@
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      aspect-ratio: 1 / 1; /* Make images square */
+      aspect-ratio: 1 / 1;
     }
 
     .project-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensure images are the same size */
+      object-fit: cover;
       display: block;
     }
 
@@ -463,11 +453,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Title at top, Explore at bottom */
+      justify-content: space-between;
       align-items: center;
       padding: 20px;
       box-sizing: border-box;
@@ -479,7 +469,7 @@
       margin: 0;
       font-family: 'Poppins', sans-serif;
       text-align: center;
-      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for title */
+      background: rgba(0, 0, 0, 0.7);
       padding: 8px 16px;
       border-radius: 5px;
     }
@@ -501,7 +491,6 @@
       background-color: #0056b3;
     }
 
-    /* Contact Section */
     .contact-section {
       background-color: white;
       padding: 60px 20px;
@@ -516,9 +505,9 @@
     }
 
     .contact-email {
-      font-size: 1.2rem; /* Slightly larger font size for email */
+      font-size: 1.2rem;
       font-weight: 500;
-      margin-bottom: 20px; /* Add space between email and icons */
+      margin-bottom: 20px;
       font-family: 'Poppins', sans-serif;
     }
 
@@ -533,8 +522,8 @@
     }
 
     .contact-icons img {
-      width: 50px; /* Adjust size as needed */
-      height: 50px; /* Adjust size as needed */
+      width: 50px;
+      height: 50px;
       transition: transform 0.3s ease;
     }
 
@@ -542,35 +531,34 @@
       transform: scale(1.1);
     }
 
-    /* Media Queries for Mobile */
     @media (max-width: 768px) {
       h1 {
-        font-size: 2.5rem; /* Smaller font size for mobile */
+        font-size: 2.5rem;
       }
 
       p {
-        font-size: 1.2rem; /* Adjusted for mobile */
+        font-size: 1.2rem;
       }
 
       .experience-section h2 {
-        font-size: 2rem; /* Smaller font size for mobile */
+        font-size: 2rem;
       }
 
       .header-left, .header-right {
-        gap: 10px; /* Smaller gap for mobile */
+        gap: 10px;
       }
 
       .header-left a, .header-right a {
-        font-size: 0.8rem; /* Smaller font size for mobile */
+        font-size: 0.8rem;
       }
 
       .header-right {
-        display: none; /* Hide header-right on mobile */
+        display: none;
       }
 
       .image-container {
-        width: 100%; /* Full width on mobile */
-        max-width: 100%; /* No max-width on mobile */
+        width: 100%;
+        max-width: 100%;
       }
 
       .modal-body {
@@ -607,15 +595,14 @@
       }
 
       .projects-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 projects per row on mobile */
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .contact-icons img {
-        width: 40px; /* Smaller icons for mobile */
+        width: 40px;
         height: 40px;
       }
 
-      /* Smaller modals on mobile */
       .modal-content {
         width: 90%;
         max-width: 90%;
@@ -637,11 +624,11 @@
 
     @media (max-width: 480px) {
       .projects-grid {
-        grid-template-columns: 1fr; /* 1 project per row on smaller screens */
+        grid-template-columns: 1fr;
       }
 
       .contact-icons img {
-        width: 35px; /* Even smaller icons for very small screens */
+        width: 35px;
         height: 35px;
       }
     }
@@ -672,13 +659,11 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero-section">
     <h1>Hi, My name is Conal Smith</h1>
     <p>I am a <span class="typewriter" id="typewriter"></span></p>
   </section>
 
-  <!-- Education & Experience Section -->
   <section id="experience" class="experience-section">
     <h2>Education & Experience</h2>
     <div class="image-row">
@@ -703,7 +688,6 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills" class="skills-section">
     <h2>Skills</h2>
     <div class="skills-grid">
@@ -727,10 +711,13 @@
         <img src="CAD.jpg" alt="CAD">
         <p>Solidworks, Fusion360</p>
       </div>
+      <div class="skill-item">
+        <img src="PCB.jpg" alt="PCB">
+        <p>PCB Schematics & Layout</p>
+      </div>
     </div>
   </section>
 
-  <!-- About Me Section -->
   <section id="about" class="about-section">
     <h2>About Me</h2>
     <div class="about-content">
@@ -751,7 +738,6 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects" class="projects-section">
     <h2>Projects</h2>
     <div class="projects-grid">
@@ -800,7 +786,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <h2>Contact</h2>
     <p class="contact-email">Email: conalhsmith@gmail.com</p>
@@ -825,7 +810,7 @@
       <div class="modal-tabs">
         <div class="modal-tab active" data-tab="trimble-tab1">Overview</div>
         <div class="modal-tab" data-tab="trimble-tab2">Details</div>
-        <div class="modal-tab" data-tab="trimble-tab3">Recomendations</div>
+        <div class="modal-tab" data-tab="trimble-tab3">Recommendations</div>
       </div>
       <div class="modal-body">
         <img src="Trimble.jpg" alt="Trimble Experience">
@@ -874,7 +859,7 @@
       <div class="modal-tabs">
         <div class="modal-tab active" data-tab="gbv-tab1">Overview</div>
         <div class="modal-tab" data-tab="gbv-tab2">Details</div>
-        <div class="modal-tab" data-tab="gbv-tab3">Recomendations</div>
+        <div class="modal-tab" data-tab="gbv-tab3">Recommendations</div>
       </div>
       <div class="modal-body">
         <img src="GBV.jpg" alt="GBV Experience">
@@ -906,24 +891,12 @@
       </div>
       <div class="modal-tabs">
         <div class="modal-tab active" data-tab="uc-tab1">Overview</div>
-        <div class="modal-tab" data-tab="uc-tab2">Details</div>
-        <div class="modal-tab" data-tab="uc-tab3">Achievements</div>
       </div>
       <div class="modal-body">
         <img src="UC.jpg" alt="UC Experience">
         <div class="tab-content active" id="uc-tab1">
           <p>
             Final year student studying Mechatronics engineering. Current GPA of 8.33. Studies focussed on robotics and embedded systems. 
-          </p>
-        </div>
-        <div class="tab-content" id="uc-tab2">
-          <p>
-            delete
-          </p>
-        </div>
-        <div class="tab-content" id="uc-tab3">
-          <p>
-            delete
           </p>
         </div>
       </div>
@@ -1063,13 +1036,11 @@
   </div>
 
   <script>
-    // Array of roles to display
     const roles = ["Mechatronics Engineer", "Embedded Developer", "Robotics Enthusiast"];
     let roleIndex = 0;
     let charIndex = 0;
     const typewriterElement = document.getElementById('typewriter');
 
-    // Typing effect functions
     function type() {
       if (charIndex < roles[roleIndex].length) {
         typewriterElement.textContent += roles[roleIndex].charAt(charIndex);
@@ -1091,15 +1062,12 @@
       }
     }
 
-    // Start typing effect
     type();
 
-    // Modal functionality
     const exploreButtons = document.querySelectorAll('.explore-button');
     const modals = document.querySelectorAll('.modal');
     const closeModalButtons = document.querySelectorAll('.close-modal');
 
-    // Modal open/close functions
     function handleModalClose(e) {
       if (e.target.classList.contains('modal')) {
         e.target.style.display = 'none';
@@ -1119,43 +1087,34 @@
       });
     });
 
-    // Close modal on outside click/touch
     window.addEventListener('click', handleModalClose);
     window.addEventListener('touchstart', handleModalClose);
 
-    // Close modal on ESC key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         modals.forEach(modal => modal.style.display = 'none');
       }
     });
 
-    // Tab functionality for modals
     const modalTabs = document.querySelectorAll('.modal-tab');
     modalTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const modal = tab.closest('.modal-content');
         const tabId = tab.getAttribute('data-tab');
 
-        // Remove active class from all tabs
         modal.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
-
-        // Hide all tab content
         modal.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
 
-        // Activate clicked tab and show its content
         tab.classList.add('active');
         document.getElementById(tabId).style.display = 'block';
       });
     });
 
-    // Dropdown menu functionality
     function toggleDropdown() {
       const dropdownMenu = document.getElementById('dropdownMenu');
       dropdownMenu.classList.toggle('active');
     }
 
-    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
       const dropdownMenu = document.getElementById('dropdownMenu');
       const menuIcon = document.querySelector('.menu-icon');
