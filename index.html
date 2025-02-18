@@ -261,44 +261,16 @@
       margin-bottom: 15px;
     }
 
-    .image-container-modal {
-      position: relative;
-      width: 100%;
+    .modal-images {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      gap: 20px;
       margin-top: 20px;
     }
 
-    .modal-body img {
+    .modal-images img {
       width: 100%;
       border-radius: 10px;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 1.5rem;
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-    }
-
-    .arrow:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .arrow-left {
-      left: 10px;
-    }
-
-    .arrow-right {
-      right: 10px;
     }
 
     .close-modal {
@@ -879,10 +851,10 @@
             Recommendation: 
           </p>
         </div>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('trimble-image', 'trimbleImages', -1)">&#10094;</button>
-          <img id="trimble-image" src="Trimble1.jpg" alt="Trimble Experience">
-          <button class="arrow arrow-right" onclick="changeImage('trimble-image', 'trimbleImages', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="Trimble1.jpg" alt="Trimble Experience 1">
+          <img src="Trimble2.jpg" alt="Trimble Experience 2">
+          <img src="Trimble3.jpg" alt="Trimble Experience 3">
         </div>
       </div>
     </div>
@@ -916,10 +888,9 @@
             Conal has a great work ethic with a high consistency in his output. Conal assisted with the development of hydrogen vehicle subsystems, the development department works at an accelerated pace and his assistance allowed us to maintain pace without delaying milestones. Keen to keep a move on with work, he is motivated toward keeping good progress. Conal has dependable attendance and his consistent output left us happy with his contribution. He was a valued team member, and I am happy to recommend Conal to any prospective employer.
           </p>
         </div>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('gbv-image', 'gbvImages', -1)">&#10094;</button>
-          <img id="gbv-image" src="GBV1.jpg" alt="GBV Experience">
-          <button class="arrow arrow-right" onclick="changeImage('gbv-image', 'gbvImages', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="GBV1.jpg" alt="GBV Experience 1">
+          <img src="GBV2.jpg" alt="GBV Experience 2">
         </div>
       </div>
     </div>
@@ -941,10 +912,8 @@
             Final year student studying Mechatronics engineering. Current GPA of 8.33. Studies focussed on robotics and embedded systems. 
           </p>
         </div>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('uc-image', 'ucImages', -1)">&#10094;</button>
-          <img id="uc-image" src="UC1.jpg" alt="UC Experience">
-          <button class="arrow arrow-right" onclick="changeImage('uc-image', 'ucImages', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="UC1.jpg" alt="UC Experience 1">
         </div>
       </div>
     </div>
@@ -962,10 +931,8 @@
         <p>
         Description here.
         </p>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('project1-image', 'project1Images', -1)">&#10094;</button>
-          <img id="project1-image" src="project1a.jpg" alt="Project 1">
-          <button class="arrow arrow-right" onclick="changeImage('project1-image', 'project1Images', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="project1a.jpg" alt="Project 1 Image 1">
         </div>
       </div>
     </div>
@@ -985,10 +952,9 @@
         <p>
           I was primarily responsbile for concept generation, and mechanical design. I was able to design and build a efficient weight collection system using a paddle and a ramp, testing concluding that it successfully collected weights 90% of the time. This design featured a continuity circuit for real/fake weight differentiation and a simple release gate to drop wreights at base. After concluding the mechanical design I designed the weight collection software, and assisted with navigational software (SLAM).
         </p>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('project2-image', 'project2Images', -1)">&#10094;</button>
-          <img id="project2-image" src="project2a.jpg" alt="Project 2">
-          <button class="arrow arrow-right" onclick="changeImage('project2-image', 'project2Images', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="project2a.jpg" alt="Project 2 Image 1">
+          <img src="project2b.jpg" alt="Project 2 Image 2">
         </div>
       </div>
     </div>
@@ -1022,10 +988,8 @@
           GitHub Repository:<br>
           <a href="https://github.com/conalhsmith/Helicopter-Rig-Control-Project" target="_blank">Project Code</a>
         </p>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('project3-image', 'project3Images', -1)">&#10094;</button>
-          <img id="project3-image" src="project3a.jpg" alt="Project 3">
-          <button class="arrow arrow-right" onclick="changeImage('project3-image', 'project3Images', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="project3a.jpg" alt="Project 3 Image 1">
         </div>
       </div>
     </div>
@@ -1051,10 +1015,8 @@
         <p> 
           The programming stage seemed relatively simple, however the robot was unable to change speeds, which I discovered was due to the motor drivers not being connected to the PWM outputs of the MCU. This was a major learning lesson as it how a simple mistake within PCB design can effect the entire system. By performing simple wire bypasses and touching up the code, the robot was able to swiftly maneuver the given course.
         </p>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('project4-image', 'project4Images', -1)">&#10094;</button>
-          <img id="project4-image" src="project4a.jpg" alt="Project 4">
-          <button class="arrow arrow-right" onclick="changeImage('project4-image', 'project4Images', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="project4a.jpg" alt="Project 4 Image 1">
         </div>
       </div>
     </div>
@@ -1074,10 +1036,8 @@
         <p>
         The repository for the project can be found here: https://github.com/conalhsmith/2-Player-Pong
         </p>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('project5-image', 'project5Images', -1)">&#10094;</button>
-          <img id="project5-image" src="project5a.jpg" alt="Project 5">
-          <button class="arrow arrow-right" onclick="changeImage('project5-image', 'project5Images', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="project5a.jpg" alt="Project 5 Image 1">
         </div>
       </div>
     </div>
@@ -1097,10 +1057,8 @@
         <p>
           At this stage I didn’t have access to a 3D printer so I had to use some initiative in sourcing parts from around the house. Overall this project enhanced my problem solving abilities, and taught me how to split a challenging project into smaller, easier parts.
         </p>
-        <div class="image-container-modal">
-          <button class="arrow arrow-left" onclick="changeImage('project6-image', 'project6Images', -1)">&#10094;</button>
-          <img id="project6-image" src="project6a.jpg" alt="Project 6">
-          <button class="arrow arrow-right" onclick="changeImage('project6-image', 'project6Images', 1)">&#10095;</button>
+        <div class="modal-images">
+          <img src="project6a.jpg" alt="Project 6 Image 1">
         </div>
       </div>
     </div>
@@ -1194,31 +1152,6 @@
         dropdownMenu.classList.remove('active');
       }
     });
-
-    // Image switching functionality
-    const trimbleImages = ["Trimble1.jpg", "Trimble2.jpg", "Trimble3.jpg", "Trimble4.jpg", "Trimble5.jpg"];
-    const gbvImages = ["GBV1.jpg", "GBV2.jpg"];
-    const ucImages = ["UC1.jpg"];
-    const project1Images = ["project1a.jpg"];
-    const project2Images = ["project2a.jpg", "project2b.jpg"];
-    const project3Images = ["project3a.jpg"];
-    const project4Images = ["project4a.jpg"];
-    const project5Images = ["project5a.jpg"];
-    const project6Images = ["project6a.jpg"];
-
-    function changeImage(imageId, imageArray, direction) {
-      const imageElement = document.getElementById(imageId);
-      const currentIndex = imageArray.indexOf(imageElement.src.split('/').pop());
-      let newIndex = currentIndex + direction;
-
-      if (newIndex < 0) {
-        newIndex = imageArray.length - 1;
-      } else if (newIndex >= imageArray.length) {
-        newIndex = 0;
-      }
-
-      imageElement.src = imageArray[newIndex];
-    }
   </script>
 </body>
 </html>
